@@ -1,11 +1,10 @@
 import { Translator } from '@eo-locale/core';
-import { FunctionalComponent, h } from 'preact';
-
+import { FunctionalComponent, h, Fragment } from 'preact';
 import { EOLocaleContext } from '../context';
+import { useContext } from 'preact/hooks';
 
 export interface IEOLocaleDateProps extends Intl.DateTimeFormatOptions {
   value: Date;
-
   language?: string;
 }
 
@@ -15,15 +14,13 @@ export const EOLocaleDate: FunctionalComponent<IEOLocaleDateProps> = ({
   value,
   ...options
 }) => {
-  return (
-    <EOLocaleContext.Consumer>
-      {context => {
-        if (language && language !== context.language) {
-          return new Translator(language).formatDate(value, options);
-        }
+  const context = useContext(EOLocaleContext);
 
-        return context.translator.formatDate(value, options);
-      }}
-    </EOLocaleContext.Consumer>
+  return (
+    <Fragment>
+      {language && language !== context.language
+        ? new Translator(language).formatDate(value, options)
+        : context.translator.formatDate(value, options)}
+    </Fragment>
   );
 };

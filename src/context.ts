@@ -1,5 +1,5 @@
 import { ILocale, Translator } from '@eo-locale/core';
-import { createContext } from 'preact-context';
+import { createContext } from 'preact';
 
 export interface IEOLocaleContext {
   language: string;
@@ -7,11 +7,8 @@ export interface IEOLocaleContext {
   translator: Translator;
 }
 
-export const EOLocaleContext = createContext<IEOLocaleContext>(
-  {
-    language: '',
-    locales: [],
-    translator: new Translator(),
-  },
-  (prev, next) => (prev.language !== next.language ? 1 : 0),
-);
+export const EOLocaleContext = createContext<IEOLocaleContext>({
+  language: '',
+  locales: [],
+  translator: new Translator(),
+});
