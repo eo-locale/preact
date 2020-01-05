@@ -7,14 +7,19 @@ export interface IEOLocaleProviderProps {
   locales: ILocale[];
 }
 
-export const EOLocaleProvider: FunctionalComponent<IEOLocaleProviderProps> = ({ children, language, locales }) => {
+export const EOLocaleProvider: FunctionalComponent<IEOLocaleProviderProps> = ({
+  children,
+  language,
+  locales,
+}) => {
   return (
     <EOLocaleContext.Provider
       value={{
         language,
         locales,
         translator: new Translator(language, locales),
-      }}>
+      }}
+    >
       {children}
     </EOLocaleContext.Provider>
   );
