@@ -24,11 +24,12 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^2.2.4",
+    "@size-limit/preset-small-lib": "^4.5.4",
     "preact": "^10.1.1",
-    "rollup": "^1.28.0",
-    "rollup-plugin-terser": "^5.0.0",
-    "rollup-plugin-typescript2": "^0.25.3",
+    "rollup": "^2.21.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "size-limit": "^4.5.4",
     "typescript": "^3.7.4"
   },
   "peerDependencies": {

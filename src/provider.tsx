@@ -1,10 +1,10 @@
-import { ILocale, Translator } from '@eo-locale/core';
+import { Locale, Translator } from '@eo-locale/core';
 import { FunctionalComponent, h } from 'preact';
 import { EOLocaleContext } from './context';
 
 export interface IEOLocaleProviderProps {
   language: string;
-  locales: ILocale[];
+  locales: Locale[];
 }
 
 export const EOLocaleProvider: FunctionalComponent<IEOLocaleProviderProps> = ({

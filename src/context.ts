@@ -1,9 +1,9 @@
-import { ILocale, Translator } from '@eo-locale/core';
+import { Locale, Translator } from '@eo-locale/core';
 import { createContext } from 'preact';
 
 export interface IEOLocaleContext {
   language: string;
-  locales: ILocale[];
+  locales: Locale[];
   translator: Translator;
 }
 
